@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
-
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -66,8 +66,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-    'http://localhost:5173'
+    '.vercel.app'
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -105,6 +104,10 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+DATABASES["default"] = dj_database_url.parse("postgres://jason_djang_vite_user:K7yOtu7f2PsL32B9Y0o5Qvs9WsSiEjcT@dpg-cootnpe3e1ms73bgltj0-a.oregon-postgres.render.com/jason_djang_vite")
+
+# postgres://jason_djang_vite_user:K7yOtu7f2PsL32B9Y0o5Qvs9WsSiEjcT@dpg-cootnpe3e1ms73bgltj0-a.oregon-postgres.render.com/jason_djang_vite
 
 AUTH_USER_MODEL = "api.User"
 
