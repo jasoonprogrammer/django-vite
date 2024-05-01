@@ -1,5 +1,4 @@
 import SideNav from "../SideNav"
-import { FormLabel } from "react-bootstrap"
 import AddVariation from "./AddVariation"
 import NoPreview from "../../images/NoPreview.png"
 import { useEffect, useState } from "react"
