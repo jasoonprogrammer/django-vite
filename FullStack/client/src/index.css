@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-item {
+  @apply flex justify-center h-16 items-center
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.excerpt {
+  /* Display the element as a block-level element using -webkit-box */
+  display: -webkit-box;
+  /* Limit the number of displayed lines to 3 */
+  -webkit-line-clamp: 3;
+  /* Set the direction of the -webkit-box to vertical */
+  -webkit-box-orient: vertical;
+  /* Hide any content that overflows its container */
+  overflow: hidden;
+}
+
+.tailwind-input {
+  @apply py-1 px-2 border border-gray-300 rounded-md focus:outline-none
+}
