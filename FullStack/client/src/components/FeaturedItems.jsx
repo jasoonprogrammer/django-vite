@@ -49,7 +49,7 @@ const FeaturedItems = () => {
                 })
                 setRender(!render)
 
-            }, 2000)
+            }, 30000)
         }).catch(err => {
             if (err.response.status === 404) {
                 setPage(1)
