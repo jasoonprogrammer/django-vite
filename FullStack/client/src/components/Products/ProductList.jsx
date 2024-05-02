@@ -12,9 +12,11 @@ import axios from 'axios'
 import { useLoaderData } from "react-router-dom"
 import { useContext, useEffect, useState } from "react"
 import { ShopContext } from "../../App"
+import loading from "../../images/loading_gif.gif"
 
 const ProductList = props => {
     const [productItems, setProductItems] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
     const [next, setNext] = useState(null)
     const [prev, setPrev] = useState(null)
     const [current, setCurrent] = useState(1)
@@ -28,6 +30,7 @@ const ProductList = props => {
     }
 
     useEffect(() => {
+        setIsLoading(true)
         axios.get(`https://jasoonprogrammer.pythonanywhere.com/api/product/list?page=${current}`, { headers: {"Authorization": "Bearer " + localStorage.getItem("access")}}).then(
             res => {
                 let data = res.data
@@ -43,13 +46,17 @@ const ProductList = props => {
         ).catch(e => {
             alert(e['message'])
         })
+        setIsLoading(false)
     }, [current])
     return(
         <>
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3">
-        { productItems.map(item => (
+
+        { !isLoading ? productItems.map(item => (
             <ProductItem withDiscount = {Math.random() > 0.5} item = {item} key = {item.id}/>
-        ))}
+        )) :
+        <img src={loading} alt="loading image" />
+        }
         
         </div>
         <div className="flex justify-center mt-2">
