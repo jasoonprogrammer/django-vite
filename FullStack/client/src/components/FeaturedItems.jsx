@@ -28,11 +28,12 @@ const FeaturedItems = () => {
     const [data, setData] = useState([])
     const [page, setPage] = useState(1)
     const [render, setRender] = useState(false)
+    const api = import.meta.env.VITE_API_URL;
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/product/feature/list?page=${page}`, { headers: {"Authorization": "Bearer " + localStorage.getItem("access")}}).then(res => {
+        axios.get(`${api}/product/feature/list?page=${page}`).then(res => {
             const items = res.data.results
             const updateCount = async (pk) => {
-                axios.get(`http://localhost:8000/api/product/feature/count/update/${pk}`, { headers: {"Authorization": "Bearer " + localStorage.getItem('access')}}).then(res => {
+                axios.get(`${api}/product/feature/count/update/${pk}`).then(res => {
                     console.log(res)
                 })
             }

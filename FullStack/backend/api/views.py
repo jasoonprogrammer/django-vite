@@ -7,7 +7,7 @@ from rest_framework import serializers
 from .serializers import *
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.views import APIView
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from .permissions import *
 from django.utils import timezone
 from rest_framework.pagination import PageNumberPagination
@@ -66,7 +66,7 @@ class CategoryListAPI(generics.ListAPIView):
     queryset = Category.objects.all()
 
 
-@permission_classes([IsAuthenticated])
+@authentication_classes([])
 @api_view(["GET"])
 def update_count(request, pk):
     item = FeatureProduct.objects.filter(product__id = pk)

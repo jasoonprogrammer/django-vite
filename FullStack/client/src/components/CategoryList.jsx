@@ -12,8 +12,9 @@ import axios from 'axios'
 import { useEffect, useState } from "react"
 const CategoryList = () => {
     const [data, setData] = useState([])
+    const api = import.meta.env.VITE_API_URL;
     useEffect(() => {
-        axios.get("http://localhost:8000/api/category/list", {headers: {"Authorization": "Bearer " + localStorage.getItem("access")}}).then(
+        axios.get(`${api}/category/list`).then(
             res => {
                 setData(res.data.results )
             }
