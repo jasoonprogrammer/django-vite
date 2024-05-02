@@ -28,7 +28,7 @@ const ProductList = props => {
     }
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/product/list?page=${current}`, { headers: {"Authorization": "Bearer " + localStorage.getItem("access")}}).then(
+        axios.get(`https://jasoonprogrammer.pythonanywhere.com/api/product/list?page=${current}`, { headers: {"Authorization": "Bearer " + localStorage.getItem("access")}}).then(
             res => {
                 let data = res.data
                 setProductItems([...productItems, ...data.results])

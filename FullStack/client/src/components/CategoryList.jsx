@@ -36,7 +36,7 @@ const CategoryList = () => {
             <CategoryItem name = "Mouse" image={mouse}/>
             {data.map(item => (
         
-        <CategoryItem name = {item.name} image={`http://localhost:8000/${item.thumbnail}`} key = {item.id }/>
+        <CategoryItem name = {item.name} image={`https://jasoonprogrammer.pythonanywhere.com/${item.thumbnail}`} key = {item.id }/>
         ))}
         </div>
         </>
