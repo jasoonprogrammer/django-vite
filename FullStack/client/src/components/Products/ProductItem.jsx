@@ -45,15 +45,13 @@ const ProductItem = (props) => {
                 </div>
                 <span className="text excerpt font-semibold" title={item.name}>{item.name}</span>
                 <div className="flex items-bottom mt-2">
-                    {isSale ? 
+                    {/* isSale ? 
                     <>
-                        { /* <span className="text-green-700 font-semibold">₱{item.price - Math.floor(item.price * Math.random() * 0.3)}</span> 
-                    <span className="text-xs line-through ps-2">₱{item.price}</span> */ }
-                    </>
-                    :
+                        {<span className="text-green-700 font-semibold">₱{item.price - Math.floor(item.price * Math.random() * 0.3)}</span> 
+                    <span className="text-xs line-through ps-2">₱{item.price}</span>}
+                    </> */}
                     <span className="font-semibold">₱{ item.price }</span>
-
-                }
+                    
                 </div>
                 <div className = "flex grow h-full items-end">
                     {item.quantity > 0 ?
