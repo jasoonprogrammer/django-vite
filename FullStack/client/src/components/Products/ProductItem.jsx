@@ -35,9 +35,9 @@ const ProductItem = (props) => {
             <div className="border border-gray-200 rounded-lg flex justify-center flex-col p-3 shadow cursor-pointer hover:bg-gray-200">
                 <div className="flex justify-center h-[70px] relative">
                     <img src={item.image} alt="" className="object-contain"/>
-                    {isSale && 
+                    {/* isSale && 
                     <span className="absolute bg-green-700 text-white top-3 right-[-5px] text-xs transform rotate-[40deg] px-5 text-center whitespace-nowrap">Sale!</span>
-                    }
+                    */}
                     {isAd && 
                     <span className="absolute bg-green-700 text-white top-3 right-[-5px] text-xs px-5 text-center whitespace-nowrap">Ad</span>
                     }
@@ -47,8 +47,8 @@ const ProductItem = (props) => {
                 <div className="flex items-bottom mt-2">
                     {isSale ? 
                     <>
-                    <span className="text-green-700 font-semibold">₱{item.price - Math.floor(item.price * Math.random() * 0.3)}</span>
-                    <span className="text-xs line-through ps-2">₱{item.price}</span>
+                        { /* <span className="text-green-700 font-semibold">₱{item.price - Math.floor(item.price * Math.random() * 0.3)}</span> 
+                    <span className="text-xs line-through ps-2">₱{item.price}</span> */ }
                     </>
                     :
                     <span className="font-semibold">₱{ item.price }</span>
