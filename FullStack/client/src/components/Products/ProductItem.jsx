@@ -55,11 +55,13 @@ const ProductItem = (props) => {
 
                 }
                 </div>
-                {item.quantity > 0 ?
-                <small className="mt-2 text-xs font-light"><span className="">In stock: {item.quantity}</span></small>
-                :
-                <small className="mt-2 text-xs text-red-500">Out of stock</small>
-                }
+                <div className = "flex grow h-full items-end">
+                    {item.quantity > 0 ?
+                    <small className="mt-2 text-xs font-light"><span>In stock: {item.quantity}</span></small>
+                    :
+                    <small className="mt-2 text-xs text-red-500">Out of stock</small>
+                    }
+                </div>
             </div>
         </motion.div>
     </AnimatePresence>
