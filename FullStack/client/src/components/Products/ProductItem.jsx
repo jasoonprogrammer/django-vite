@@ -32,7 +32,7 @@ const ProductItem = (props) => {
     return(<>
     <AnimatePresence>
         <motion.div initial="hidden" animate="visible" exit="exit" variants={itemVariants}>
-            <div className="border border-gray-200 rounded-lg flex justify-center flex-col p-3 shadow cursor-pointer hover:bg-gray-200">
+            <div className="border border-gray-200 rounded-lg grow flex justify-center flex-col p-3 shadow cursor-pointer hover:bg-gray-200">
                 <div className="flex justify-center h-[70px] relative">
                     <img src={item.image} alt="" className="object-contain"/>
                     {/* isSale && 
